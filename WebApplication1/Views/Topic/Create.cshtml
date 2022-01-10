@@ -1,0 +1,33 @@
+﻿@model Topic
+
+<div class="container">
+
+         <a class="btn btn-secondary mt-2" style="width: 200px" asp-controller="Topic" asp-action="Index">Назад</a>
+         <h1>Создание новой темы</h1>
+        <form method="post" class="mt-4">
+
+                 <div class="form-group">
+                    <label asp-for="Name">Название темы</label>
+                    <input type="text" class="form-control" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                 </div>
+  
+  
+                <div class="form-group">
+                    <label asp-for="About">Описание</label>
+                    <textarea class="form-control" asp-for="About" rows="4"></textarea>
+                    <span asp-validation-for="About" class="text-danger"></span>
+                </div>
+
+            <button type="submit" class="btn btn-success btn-lg mt-3">Создать</button>
+            <br />
+
+            
+        </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
